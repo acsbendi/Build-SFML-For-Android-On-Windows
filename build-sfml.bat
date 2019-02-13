@@ -22,7 +22,8 @@ REM 64 bit abis (arm64-v8a and x86_64) currently fail due to not finding OpenAL,
 set abis=x86 armeabi-v7a
 (for %%a in (%abis%) do ( 
    md %%a
-   echo set current_abi=%%a> %%a\rebuild-temp.txt
+   echo @echo off> %%a\rebuild-temp.txt
+   echo set current_abi=%%a>> %%a\rebuild-temp.txt
    echo set ndk_path=%ndk_path%>> %%a\rebuild-temp.txt
 ))
 
