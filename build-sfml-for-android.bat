@@ -4,7 +4,7 @@ IF [%1] == [] (
 	exit /b
 )
 
-set ndk_path=D:/NVPACK/android-ndk-r19
+set ndk_path=%1
 
 IF [%2] == [] set install_path=%userprofile%\SFML
 IF [%2] NEQ [] set install_path=%1
