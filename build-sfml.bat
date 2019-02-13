@@ -18,7 +18,8 @@ cd SFML
 md build
 cd build
 
-set abis=x86 armeabi armeabi-v7a 
+REM 64 bit abis (arm64-v8a and x86_64) currently fail due to not finding OpenAL, so they are not included
+set abis=x86 armeabi-v7a
 (for %%a in (%abis%) do ( 
    md %%a
    echo set current_abi=%%a> %%a\rebuild-temp.txt
