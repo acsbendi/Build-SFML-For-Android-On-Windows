@@ -34,3 +34,7 @@ popd
    del %install_path%\SFML\build\%%a\rebuild-temp.txt
 ))
 
+xcopy %~dp0rebuild-all.bat %install_path%\SFML\build\
+
+%install_path%\SFML\build\rebuild-all.bat
+
