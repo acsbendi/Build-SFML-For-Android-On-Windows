@@ -4,11 +4,14 @@ set android_zip_name=android-ndk-r%latest_ndk_version%-windows-x86_64.zip
 IF [%1] == [] (
 	set ndk_download_path=%~dp0
 ) ELSE (
-	IF "%1:~0,1%" == "." (
-		set ndk_download_path=%~dp0\%
-	) ELSE (
-		set ndk_download_path=%1
-	)
+	set ndk_download_path=%1
+)
+IF "%ndk_download_path:~0,1%" == "." (
+	echo Relative paths cannot be used
+	exit /b
+)
+IF NOT "%ndk_download_path:~-1%" == "\" (
+	set ndk_download_path=%ndk_download_path%\
 )
 
 wget --directory-prefix %ndk_download_path% https://dl.google.com/android/repository/%android_zip_name%
