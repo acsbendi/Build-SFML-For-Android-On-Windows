@@ -1,4 +1,8 @@
 @echo off
+
+CALL check-requirements.bat
+IF ERRORLEVEL 1 exit /b
+
 set latest_ndk_version=19
 set android_zip_name=android-ndk-r%latest_ndk_version%-windows-x86_64.zip
 IF [%1] == [] (

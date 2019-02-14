@@ -4,6 +4,9 @@ IF [%1] == [] (
 	exit /b
 )
 
+CALL check-requirements.bat
+IF ERRORLEVEL 1 exit /b
+
 set ndk_path=%1
 
 IF [%2] == [] set install_path=%userprofile%\SFML
