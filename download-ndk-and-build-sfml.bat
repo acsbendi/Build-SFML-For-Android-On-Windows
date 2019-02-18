@@ -10,7 +10,7 @@ IF [%1] == [] (
 ) ELSE (
 	set ndk_download_path=%1
 )
-IF "%ndk_download_path:~0,1%" == "." (
+IF "%ndk_download_path:~1,1%" == ":" (
 	echo Relative paths cannot be used
 	exit /b
 )
