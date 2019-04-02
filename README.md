@@ -13,7 +13,7 @@ Run `build-sfml.bat` followed by the absolute path to your NDK. For example, if 
         
 ### ● If you don't have NDK installed:
 
-You can install the newest version before building SFML, by executing `download-ndk-and-build-sfml.bat`. You can also specify where to install ndk, by providing an absolute path to the script. For example, if you want to install it in D:\Android, then you should run `download-ndk-and-build-sfml.bat D:\Android`.
+You can install the newest version before building SFML, by executing `download-ndk-and-build-sfml.bat`. You can also specify where to install ndk, by providing an absolute path to the script. For example, if you want to install it in D:\Android, then you should run `download-ndk-and-build-sfml.bat D:\Android`. After downloading the NDK, this script will also run `build-sfml.bat` and thus build SFML.
 
 ## Path to the downloaded SFML repository
 
