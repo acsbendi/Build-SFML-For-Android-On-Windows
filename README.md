@@ -21,7 +21,7 @@ The script will download SFML, to %userprofile%\SFML. For example, if your usern
 
 ## Created scripts
 
-The following scripts are created (and run too). You can use them to rebuild SFML in case you modify something in it.
+The following scripts are created in %userprofile%\SFML\build and its subdirectories. They are also run by `build-sfml.bat` when it builds SFML for the first time. You can use them to rebuild SFML in case you modify something in it.
 
 #### ● `rebuild-all.bat`: 
 Rebuilds SFML for all ABIs.
