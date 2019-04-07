@@ -10,7 +10,7 @@ IF ERRORLEVEL 1 exit /b
 set ndk_path=%1
 
 IF [%2] == [] set install_path=%userprofile%\SFML
-IF [%2] NEQ [] set install_path=%1
+IF [%2] NEQ [] set install_path=%2
 echo Downloading SFML to %install_path%
 
 if not exist %install_path% md %install_path%
