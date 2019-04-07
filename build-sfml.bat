@@ -32,7 +32,7 @@ set abis=x86 armeabi-v7a
 
 popd
 (for %%a in (%abis%) do ( 
-   type rebuild.bat >> %install_path%\SFML\build\%%a\rebuild-temp.txt
+   type %~dp0rebuild.bat >> %install_path%\SFML\build\%%a\rebuild-temp.txt
    type %install_path%\SFML\build\%%a\rebuild-temp.txt > %install_path%\SFML\build\%%a\rebuild.bat
    del %install_path%\SFML\build\%%a\rebuild-temp.txt
 ))
