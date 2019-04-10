@@ -15,7 +15,7 @@ echo Downloading SFML to %install_path%
 
 if not exist %install_path% md %install_path%
 pushd %install_path%
-git clone https://github.com/SFML/SFML
+git clone --single-branch -b build-with-latest-ndk-fix https://github.com/acsbendi/SFML
 
 cd SFML
 md build
