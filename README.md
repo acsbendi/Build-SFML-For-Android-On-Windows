@@ -21,7 +21,7 @@ You can install the newest version before building SFML, by executing `download-
 
 ## Path to the downloaded SFML repository
 
-The script will download SFML, to %userprofile%\SFML. For example, if your username is Foo, you will be able to find the downloaded SFML repository at C:\Users\Foo\SFML.
+The script will download SFML to %userprofile%\SFML. For example, if your username is Foo, you will be able to find the downloaded SFML repository at C:\Users\Foo\SFML.
 
 ## Created scripts
 
