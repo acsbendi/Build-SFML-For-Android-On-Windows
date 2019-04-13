@@ -3,7 +3,11 @@ Batch scripts to build SFML for Android, using the latest Android NDK
 
 # Requirements
 
-Successfully building SFML requires that you have `cmake` and `git` in your `PATH`.
+Successfully building SFML requires that you have 
+* `cmake` (minimum version is **3.7.2**)
+* `git`
+
+in your `PATH`.
 
 # How to use it
 
