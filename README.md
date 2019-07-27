@@ -6,6 +6,7 @@ Batch scripts to build SFML for Android, using the latest Android NDK
 Successfully building SFML requires that you have 
 * `cmake` (minimum version is **3.7.2**)
 * `git`
+* the directory where MinGW is installed (for example, `C:\Program Files\mingw32\bin`). You can check this by trying to run `mingw32-make` in CMD.
 
 in your `PATH`.
 
