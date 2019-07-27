@@ -4,6 +4,14 @@ IF [%1] == [] (
 	exit /b
 )
 
+set ndk_path_valid=0
+FOR %%i IN (%1) DO IF EXIST %%~si\NUL set ndk_path_valid=1
+
+if [%ndk_path_valid%] NEQ [1] (
+	echo The path you provided to your NDK is not a directory
+	exit /b
+)
+
 CALL check-requirements.bat
 IF ERRORLEVEL 1 exit /b
 
