@@ -3,7 +3,7 @@
 CALL check-requirements.bat
 IF ERRORLEVEL 1 exit /b
 
-set latest_ndk_version=19c
+set latest_ndk_version=20
 set android_zip_name=android-ndk-r%latest_ndk_version%-windows-x86_64.zip
 IF [%1] == [] (
 	set ndk_download_path=%~dp0
