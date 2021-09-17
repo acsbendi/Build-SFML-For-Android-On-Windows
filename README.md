@@ -30,6 +30,6 @@ The following scripts are created in %userprofile%\SFML\build and its subdirecto
 Rebuilds SFML for all ABIs.
 
 #### ● `rebuild.bat` (in each ABI's directory): 
-Rebuilds SFML for the ABI corrisponding to script's directory.
+Rebuilds SFML for the ABI corresponding to script's directory.
 
 
