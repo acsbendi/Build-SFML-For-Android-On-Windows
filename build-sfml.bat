@@ -18,7 +18,13 @@ IF ERRORLEVEL 1 exit /b
 set ndk_path=%1
 
 IF [%2] == [] set install_path=%userprofile%\SFML
-IF [%2] NEQ [] set install_path=%2
+IF [%2] NEQ [] (
+    IF [%2] NEQ [--release] (
+        set install_path=%2
+    ) ELSE (
+        set install_path=%userprofile%\SFML
+    )
+)
 echo Downloading SFML to %install_path%
 
 if not exist %install_path% md %install_path%
@@ -29,6 +35,11 @@ cd SFML
 md build
 cd build
 
+set build_type=Debug
+
+IF [%2] == [--release] set build_type=Release
+IF [%3] == [--release] set build_type=Release
+
 REM 64 bit abis (arm64-v8a and x86_64) currently fail due to not finding OpenAL, so they are not included
 set abis=x86 armeabi-v7a
 (for %%a in (%abis%) do ( 
@@ -36,6 +47,7 @@ set abis=x86 armeabi-v7a
    echo @echo off> %%a\rebuild-temp.txt
    echo set current_abi=%%a>> %%a\rebuild-temp.txt
    echo set ndk_path=%ndk_path%>> %%a\rebuild-temp.txt
+   echo set build_type=%build_type%>> %%a\rebuild-temp.txt
 ))
 
 popd

@@ -8,7 +8,11 @@ set android_zip_name=android-ndk-r%latest_ndk_version%-windows-x86_64.zip
 IF [%1] == [] (
 	set ndk_download_path=%~dp0
 ) ELSE (
-	set ndk_download_path=%1
+    IF [%1] == [--release] (
+        set ndk_download_path=%~dp0
+    ) ELSE (
+    	set ndk_download_path=%1
+    )
 )
 IF NOT "%ndk_download_path:~1,1%" == ":" (
 	echo Relative paths cannot be used
@@ -23,7 +27,15 @@ wget --directory-prefix %ndk_download_path% https://dl.google.com/android/reposi
 Call :UnZipFile "%ndk_download_path%" "%ndk_download_path%android-ndk-r%latest_ndk_version%-windows-x86_64.zip"
 del %ndk_download_path%%android_zip_name%
 
-build-sfml.bat %ndk_download_path%android-ndk-r%latest_ndk_version%
+IF [%1] == [--release] (
+    build-sfml.bat %ndk_download_path%android-ndk-r%latest_ndk_version% --release
+) ELSE (
+    IF [%2] == [--release] (
+        build-sfml.bat %ndk_download_path%android-ndk-r%latest_ndk_version% --release
+    ) ELSE (
+        build-sfml.bat %ndk_download_path%android-ndk-r%latest_ndk_version%
+    )
+)
 
 exit /b
 

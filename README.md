@@ -18,6 +18,10 @@ Run `build-sfml.bat` followed by the **absolute** path to your NDK. For example,
 
 You can install the newest version before building SFML, by executing `download-ndk-and-build-sfml.bat`. You can also specify where to install ndk, by providing an **absolute** path to the script. For example, if you want to install it in D:\Android, then you should run `download-ndk-and-build-sfml.bat D:\Android`. After downloading the NDK, this script will also run `build-sfml.bat` and thus build SFML.
 
+## Build type
+
+By default, these scripts build SFML in Debug mode. To build it in Release mode, you have to provide `--release` as the last argument to either `build-sfml.bat` or `download-ndk-and-build-sfml.bat`. For example, `build-sfml.bat D:\NVPACK\android-ndk-r19 --release`.
+
 ## Path to the downloaded SFML repository
 
 The script will download SFML to %userprofile%\SFML. For example, if your username is Foo, you will be able to find the downloaded SFML repository at C:\Users\Foo\SFML.
