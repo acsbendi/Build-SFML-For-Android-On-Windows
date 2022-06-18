@@ -3,8 +3,8 @@
 CALL check-requirements.bat
 IF ERRORLEVEL 1 exit /b
 
-set latest_ndk_version=20b
-set android_zip_name=android-ndk-r%latest_ndk_version%-windows-x86_64.zip
+set latest_ndk_version=23c
+set android_zip_name=android-ndk-r%latest_ndk_version%-windows.zip
 IF [%1] == [] (
 	set ndk_download_path=%~dp0
 ) ELSE (
@@ -24,7 +24,7 @@ IF NOT "%ndk_download_path:~-1%" == "\" (
 
 wget --directory-prefix %ndk_download_path% https://dl.google.com/android/repository/%android_zip_name%
 
-Call :UnZipFile "%ndk_download_path%" "%ndk_download_path%android-ndk-r%latest_ndk_version%-windows-x86_64.zip"
+Call :UnZipFile "%ndk_download_path%" "%ndk_download_path%%android_zip_name%"
 del %ndk_download_path%%android_zip_name%
 
 IF [%1] == [--release] (
