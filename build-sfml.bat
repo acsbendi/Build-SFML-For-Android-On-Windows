@@ -29,7 +29,7 @@ echo Downloading SFML to %install_path%
 
 if not exist %install_path% md %install_path%
 pushd %install_path%
-git clone https://github.com/acsbendi/SFML
+git clone https://github.com/SFML/SFML
 
 cd SFML
 md build
